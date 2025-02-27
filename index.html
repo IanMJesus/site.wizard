@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="header">
+        <img src="IMG/logo-wizard.png" id="logo-wizard">
+        <h2>Santo Antônio de Pádua - RJ</h2>
+    </div>
+
+    <div class="container">
+        
+        <div class="aula-demonstrativa">
+            <h4>Parabéns!</h4>
+            <h5>Você acaba de ganhar 4 aulas de inglês 100% gratuitas!</h5>
+            <p class="contato">Entre em contato conosco para agendar um horário!</p>
+            <p class="telefone">(22) 98115-0364</p>
+        </div>
+    
+    </div>
+
+    <div class="historia">
+        <h6>Conheça um pouco mais sobre a nossa história</h6>
+        <p>Desde 2007, ajudamos crianças, jovens e adultos a conquistarem novas oportunidades por meio do aprendizado de idiomas. São mais de 17 anos transformando vidas, abrindo portas e fazendo história na comunidade paduana. Aqui, o ensino vai além das palavras: usamos métodos inovadores, contamos com professores qualificados e oferecemos uma experiência envolvente e personalizada. Afinal, aprender um novo idioma não é só estudar, é crescer, conectar-se com o mundo e alcançar novos sonhos. Venha fazer parte dessa trajetória de sucesso!</p>
+    </div>
+
+    <div class="estrutura">
+        <h6>Estrutura</h6>
+        <div class="galeria-container">
+            <button class="seta esquerda" onclick="scrollGaleria(-1)">&#10094;</button>
+            <div class="galeria">
+                <img src="IMG/Estrutura 6.jpeg" onclick="openModal(0)">
+                <img src="IMG/Estrutura 2.jpeg" onclick="openModal(1)">
+                <img src="IMG/Estrutura 3.jpeg" onclick="openModal(2)">
+                <img src="IMG/Estrutura 4.jpeg" onclick="openModal(3)">
+                <img src="IMG/Estrutura 5.jpeg" onclick="openModal(4)">
+                <img src="IMG/Estrutura 1.jpg" onclick="openModal(5)">
+            </div>
+            <button class="seta direita" onclick="scrollGaleria(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <div class="material-didatico">
+        <h6>Materiais Didáticos</h6>
+        <img src="IMG/Material (1).jpg">
+        <img src="IMG/Material (2).jpg">
+        <img src="IMG/Material (3).jpg">
+        <img src="IMG/Material (4).jpg">
+        <img src="IMG/Material (5).jpg">
+    </div>
+
+    <!-- Modal de Zoom -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="fechar">&times;</span>
+        <img id="modalImg" class="modal-conteudo">
+        <button class="seta-modal" id="prev" onclick="mudarImagem(-1)">&#10094;</button>
+        <button class="seta-modal" id="next" onclick="mudarImagem(1)">&#10095;</button>
+    </div>
+
+    <script src="JS/script.js"></script>
+
+</body>
+</html> 
