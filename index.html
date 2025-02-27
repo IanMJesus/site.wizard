@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -32,18 +31,12 @@
 
     <div class="estrutura">
         <h6>Estrutura</h6>
-        <div class="galeria-container">
-            <button class="seta esquerda" onclick="scrollGaleria(-1)">&#10094;</button>
-            <div class="galeria">
-                <img src="IMG/Estrutura 6.jpeg" onclick="openModal(0)">
-                <img src="IMG/Estrutura 2.jpeg" onclick="openModal(1)">
-                <img src="IMG/Estrutura 3.jpeg" onclick="openModal(2)">
-                <img src="IMG/Estrutura 4.jpeg" onclick="openModal(3)">
-                <img src="IMG/Estrutura 5.jpeg" onclick="openModal(4)">
-                <img src="IMG/Estrutura 1.jpg" onclick="openModal(5)">
-            </div>
-            <button class="seta direita" onclick="scrollGaleria(1)">&#10095;</button>
-        </div>
+                <img src="IMG/Estrutura 6.jpeg">
+                <img src="IMG/Estrutura 2.jpeg">
+                <img src="IMG/Estrutura 3.jpeg">
+                <img src="IMG/Estrutura 4.jpeg">
+                <img src="IMG/Estrutura 5.jpeg">
+                <img src="IMG/Estrutura 1.jpg">
     </div>
 
     <div class="material-didatico">
@@ -54,16 +47,6 @@
         <img src="IMG/Material (4).jpg">
         <img src="IMG/Material (5).jpg">
     </div>
-
-    <!-- Modal de Zoom -->
-    <div id="modal" class="modal" onclick="closeModal()">
-        <span class="fechar">&times;</span>
-        <img id="modalImg" class="modal-conteudo">
-        <button class="seta-modal" id="prev" onclick="mudarImagem(-1)">&#10094;</button>
-        <button class="seta-modal" id="next" onclick="mudarImagem(1)">&#10095;</button>
-    </div>
-
-    <script src="JS/script.js"></script>
-
+    
 </body>
 </html> 
