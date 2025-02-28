@@ -98,6 +98,7 @@ h6 {
     font-size: 25px;
     display: flex;
     justify-content: center; /* Centraliza os elementos horizontalmente */
+    margin-bottom: -10px;
 }
 
 .historia p {
@@ -106,13 +107,19 @@ h6 {
     margin-right: 50px;
 }
 
-.estrutura img {
-    width: 400px;
-    margin-left: 5px;
+.estrutura {
+    display: flex; /* Alinha as imagens horizontalmente */
+    gap: 10px; /* Espaço entre as imagens */
+    overflow-x: auto; /* Adiciona a barra de rolagem horizontal apenas nas imagens */
+    white-space: nowrap; /* Garante que as imagens fiquem em uma única linha */
+    padding: 20px;
+    max-width: 90vw; /* Ajusta o tamanho máximo ao viewport */ 
 }
 
-.estrutura h6 {
-    margin-bottom: 20px;
+.estrutura img {
+    width: 293px; /* Ajuste o tamanho das imagens conforme necessário */
+    flex-shrink: 0; /* Evita que as imagens diminuam */
+    border-radius: 5px;
 }
 
 .material-didatico img {
@@ -123,6 +130,29 @@ h6 {
 .material-didatico h6 {
     margin-bottom: 20px;
 }
+
+/* -------------------------- */
+
+/* Personaliza a barra de rolagem horizontal */
+.estrutura::-webkit-scrollbar {
+    height: 10px; /* Altura da barra de rolagem horizontal */
+  }
+  
+.estrutura::-webkit-scrollbar-track {
+    background: #d3d3d3; /* Cor de fundo da trilha */
+    border-radius: 4px;
+  }
+  
+.estrutura::-webkit-scrollbar-thumb {
+    background: #333; /* Cor da barra de rolagem */
+    border-radius: 4px;
+  }
+  
+.estrutura::-webkit-scrollbar-thumb:hover {
+    background: #808080; /* Cor ao passar o mouse */
+  }
+/* -------------------------- */
+
 
 
 @media (max-width: 768px) {
@@ -160,6 +190,7 @@ h6 {
         padding: 10px;
     }
 }
+
 
 
 
