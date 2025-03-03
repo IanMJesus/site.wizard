@@ -31,12 +31,21 @@
 
     <h6>Estrutura</h6>
     <div class="estrutura">
-                <img src="IMG/Estrutura 6.jpeg" alt="Foto 1" onclick="abrirImagem(this)">
-                <img src="IMG/Estrutura 2.jpeg" alt="Foto 2" onclick="abrirImagem(this)">
-                <img src="IMG/Estrutura 3.jpeg" alt="Foto 3" onclick="abrirImagem(this)">
-                <img src="IMG/Estrutura 4.jpeg" alt="Foto 4" onclick="abrirImagem(this)">
-                <img src="IMG/Estrutura 5.jpeg" alt="Foto 5" onclick="abrirImagem(this)">
-                <img src="IMG/Estrutura 1.jpg" alt="Foto 6" onclick="abrirImagem(this)">
+        <img src="IMG/Estrutura 6.jpeg" onclick="abrirImagem(this)">
+        <img src="IMG/Estrutura 2.jpeg" onclick="abrirImagem(this)">
+        <img src="IMG/Estrutura 3.jpeg" onclick="abrirImagem(this)">
+        <img src="IMG/Estrutura 4.jpeg" onclick="abrirImagem(this)">
+        <img src="IMG/Estrutura 5.jpeg" onclick="abrirImagem(this)">
+        <img src="IMG/Estrutura 1.jpg" onclick="abrirImagem(this)">
+    </div>
+
+    <h6>Materiais Didáticos</h6>
+    <div class="material-didatico">
+        <img src="IMG/Material (1).jpg" onclick="abrirImagem(this)">
+        <img src="IMG/Material (2).jpg" onclick="abrirImagem(this)">
+        <img src="IMG/Material (3).jpg" onclick="abrirImagem(this)">
+        <img src="IMG/Material (4).jpg" onclick="abrirImagem(this)">
+        <img src="IMG/Material (5).jpg" onclick="abrirImagem(this)">
     </div>
 
     <!-- Abrir e fechar as imagens da estrutura, e utilizar seta para ir pra próxima imagem -->
@@ -49,36 +58,34 @@
     </div>
 
     <script>
-        let imagens = document.querySelectorAll(".estrutura img"); // Captura todas as imagens da galeria
         let indiceAtual = 0;
-
+        let galeriaAtual = []; // Armazena apenas as imagens da galeria selecionada
+    
         function abrirImagem(elemento) {
-            let srcImagem = elemento.src; // Obtém o caminho completo da imagem clicada
-            indiceAtual = Array.from(imagens).indexOf(elemento); // Obtém o índice correto da imagem na lista
-            document.getElementById("imagemAmpliada").src = srcImagem;
+            // Identifica a galeria correta
+            let galeria = elemento.closest('.estrutura') ? ".estrutura img" : ".material-didatico img";
+            
+            // Captura apenas as imagens da galeria aberta
+            galeriaAtual = Array.from(document.querySelectorAll(galeria));
+            
+            // Obtém o índice correto da imagem na lista da galeria
+            indiceAtual = galeriaAtual.indexOf(elemento);
+    
+            // Exibe a imagem no modal
+            document.getElementById("imagemAmpliada").src = elemento.src;
             document.getElementById("overlay").style.display = "flex";
         }
-
+    
         function fecharImagem() {
             document.getElementById("overlay").style.display = "none";
         }
-
+    
         function mudarImagem(direcao) {
-            indiceAtual = (indiceAtual + direcao + imagens.length) % imagens.length;
-            document.getElementById("imagemAmpliada").src = imagens[indiceAtual].src;
+            indiceAtual = (indiceAtual + direcao + galeriaAtual.length) % galeriaAtual.length;
+            document.getElementById("imagemAmpliada").src = galeriaAtual[indiceAtual].src;
         }
     </script>
 
-    <!-- --------------------------- -->
-
-    <h6>Materiais Didáticos</h6>
-    <div class="material-didatico">
-        <img src="IMG/Material (1).jpg">
-        <img src="IMG/Material (2).jpg">
-        <img src="IMG/Material (3).jpg">
-        <img src="IMG/Material (4).jpg">
-        <img src="IMG/Material (5).jpg">
-    </div>
     
 </body>
 </html>
